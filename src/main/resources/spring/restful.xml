@@ -28,7 +28,14 @@
 	
 	<bean id="usermanger" class="com.demo.spring.impl.UserMangerImpl"></bean>
 	
+	<bean id="outCleanInterceptor" class="com.demo.spring.common.OutCleanInterceptor"></bean>
 	<jaxrs:server address="/v1" id="rest_v1">
+	
+		<!-- 拦截器   -->
+		<jaxrs:outInterceptors>  
+            <ref bean="outCleanInterceptor"/>  
+         </jaxrs:outInterceptors>
+	
 		<jaxrs:serviceBeans>
 			<ref bean="usermanger" />
 		</jaxrs:serviceBeans>
@@ -38,6 +45,9 @@
 			<entry key="xml" value="application/xml" />
 		</jaxrs:extensionMappings>
         
+        <jaxrs:providers>
+        	<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider"/>
+    	</jaxrs:providers>
 		<jaxrs:languageMappings>
 			<entry key="en" value="en-gb" />
 		</jaxrs:languageMappings>

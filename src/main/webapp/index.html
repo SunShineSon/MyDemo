@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+hello world !
+<button onclick="map()" >map</button>
+<button onclick="login()" >login</button>
+<button onclick="register()" >register</button>
+</body>
+</html>
+
+<script type="text/javascript" src="common/jquery/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+
+function map(){
+	var url = "/MyDemo/api/v1/usermanger/map"
+	var data = {
+		value : "value"
+	}
+	$.ajax({
+		type : "POST",
+		url : url,
+		data : data,
+		headers : {
+			Accept : "application/json; charset=utf-8"
+		},
+		//dataType : 'text',
+		success : function(result) {
+			debugger;
+			alert(result);
+		},
+		error : function(err){
+			debugger;
+			alert(err);
+		}
+	});
+}
+function login(){
+	var url = "/MyDemo/api/v1/usermanger/login"
+	var data = {
+		mail : "mail",
+		password : "password"
+	}
+	$.ajax({
+		type : "POST",
+		url : url,
+		data : data,
+		headers : {
+			Accept : "application/json; charset=utf-8"
+		},
+		//dataType : 'text',
+		success : function(result) {
+			debugger;
+			alert(result);
+		},
+		error : function(err){
+			debugger;
+			alert(err);
+		}
+	});
+}
+
+function register(){
+	var url = "/MyDemo/api/v1/usermanger/register"
+	var data = {
+		mail : "mail",
+		name : "name",
+		password : "passwordA"
+	}
+	$.ajax({
+		type : "POST",
+		url : url,
+		data : data,
+		headers : {
+			Accept : "application/json; charset=utf-8"
+		},
+		//dataType : 'text',
+		success : function(result) {
+			debugger;
+			alert(result);
+		},
+		error : function(err){
+			debugger;
+			alert(err);
+		}
+	});
+}
+	
+</script>
