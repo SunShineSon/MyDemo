@@ -1,12 +1,10 @@
 package com.demo.spring.impl;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
-
 
 import org.apache.log4j.Logger;
 
@@ -15,11 +13,11 @@ import com.demo.enums.AjaxEnum;
 import com.demo.spring.inf.UserMangerIntf;
 import com.google.gson.Gson;
 
-public class UserMangerImpl implements UserMangerIntf, Serializable{
-	private Logger log = Logger.getLogger(getClass());
+public class UserMangerImpl implements UserMangerIntf{
+	private static Logger log = Logger.getLogger(UserMangerImpl.class);
 	
 	public String test() {
-		System.out.println("ok");
+		log.info("test");
 		return "hello";
 	}
 	
