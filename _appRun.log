@@ -1,1 +1,1 @@
-2016-04-01 10:22:09,689 [main] INFO  [com.demo.mail.MailDemo] - <html><body>尊敬的用户：<br/>&nbsp;&nbsp;&nbsp;您好，感谢您使用变色龙平台，请您在24小时内点击<a href="">激活账户</a>以激使用你的账户，如有问题请致电我们的客服.<br/>&nbsp;&nbsp;&nbsp;您的账号信息：<br/>联系电话:010-62960888 18610644800</body></html>
+2016-04-07 15:10:31,816 [main] INFO  [com.demo.luck.LuckServiceV2] - Person [id=1, type=null, qualifications=false]

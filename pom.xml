@@ -108,7 +108,7 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<!-- jackson -->
-		
+
 		<!-- jodd -->
 		<dependency>
 			<groupId>org.jodd</groupId>
@@ -135,11 +135,23 @@
 			<artifactId>jodd-servlet</artifactId>
 			<version>${jodd.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-http</artifactId>
+			<version>${jodd.version}</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
 		</dependency>
 
 	</dependencies>

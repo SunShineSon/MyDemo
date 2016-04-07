@@ -2,7 +2,6 @@ package com.demo.mail;
 
 import java.util.Arrays;
 import java.util.ResourceBundle;
-import java.util.UUID;
 
 import org.apache.log4j.Logger;
 
