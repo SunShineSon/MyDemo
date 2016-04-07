@@ -41,4 +41,10 @@ public class PrizePerson {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "PrizePerson [id=" + id + ", persionId=" + persionId + ", type="
+				+ type + ", date=" + date + "]";
+	}
+
 }
