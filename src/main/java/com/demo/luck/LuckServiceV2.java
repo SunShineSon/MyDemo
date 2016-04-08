@@ -102,7 +102,7 @@ public class LuckServiceV2 {
 	 */
 	private boolean prizeIsOver() {
 		log.info("prizeIsOver() mothed run ...."); 
-		boolean prizeNumFixed = Boolean.getBoolean(luck.getString("prize.num.fixed"));
+		boolean prizeNumFixed = Boolean.parseBoolean(luck.getString("prize.num.fixed"));
 		return true;
 	}
 
@@ -112,7 +112,7 @@ public class LuckServiceV2 {
 	 */
 	private boolean timeToSapaceTime() {
 		log.info("timeToSapaceTime() mothed run ...."); 
-		boolean prizeSpace = Boolean.getBoolean(luck.getString("prize.space"));
+		boolean prizeSpace = Boolean.parseBoolean(luck.getString("prize.space"));
 		if(prizeSpace){
 			try {
 				Date lastPrizeDate = sdf.parse(luckData.getString("prize.person.time"));
@@ -120,7 +120,7 @@ public class LuckServiceV2 {
 				long diff = now.getTime() - lastPrizeDate.getTime();
 				//时间间隔
 				int min = (int) (diff / (1000 * 60));
-				int prizeSpaceTime = Integer.valueOf(luckData.getString("prize.in.turn"));
+				int prizeSpaceTime = Integer.valueOf(luck.getString("prize.space.time"));
 				if(min >= prizeSpaceTime){
 					return true;
 				}else{
