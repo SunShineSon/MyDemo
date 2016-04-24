@@ -20,6 +20,8 @@ public class ArrayListDemo {
 		lists.add(a);
 		lists.add(b);
 		lists.add(b);
+		lists.add(b);
+		
 		lists.add(1, stringBuffer);
 		
 		for(Object list : lists){
