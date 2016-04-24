@@ -14,7 +14,7 @@ public class ArrayListDemo {
 	private void arrayList(){
 		List<Object> lists = new ArrayList<Object>();
 		String a = "AAAAAAAAAAAAAAAA";
-		int b = 1;
+		int b = 111;
 		StringBuffer stringBuffer = new StringBuffer("asdfghjkl");
 		lists.add(a);
 		lists.add(a);
