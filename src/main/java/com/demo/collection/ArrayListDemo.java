@@ -13,7 +13,7 @@ public class ArrayListDemo {
 
 	private void arrayList(){
 		List<Object> lists = new ArrayList<Object>();
-		String a = "A";
+		String a = "AAAAAAAAAAAAAAAA";
 		int b = 1;
 		StringBuffer stringBuffer = new StringBuffer("asdfghjkl");
 		lists.add(a);
