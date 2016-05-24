@@ -10,5 +10,6 @@ public class Demo {
 		Integer randomNum = random.nextInt(1000000000);
 
 		String md5Num = randomNum.toString();
+		
 	}
 }
