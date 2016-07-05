@@ -68,8 +68,19 @@ public class Demo {
 		System.out.println(strV.trim());
 	}
 	
+	void mothedEquals(){
+		String a = "abc";
+		String b = "def";
+		String c = a + b;
+		String e = "abc" + "def";
+		System.out.println(c == "abcdef");//false
+		System.out.println(e == "abcdef");//true
+	}
+	
 	public static void main(String[] args) {
 		Demo demo  = new Demo();
-		demo.strReplace();
+		demo.mothedEquals();
 	}
+	
+	
 }
