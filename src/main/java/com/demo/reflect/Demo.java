@@ -1,6 +1,6 @@
 package com.demo.reflect;
 
-public class Demmo {
+public class Demo {
 
 	public static void main(String[] args) {
 		System.out.println();
