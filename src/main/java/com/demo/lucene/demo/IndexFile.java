@@ -10,11 +10,12 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.LongField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.IndexableField;
+import org.apache.lucene.queries.function.valuesource.LongFieldSource;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -42,8 +43,7 @@ public class IndexFile {
 			for (File file : files.listFiles()) {
 				log.info("filename:" + file.getName());
 				document = new Document();
-				document.add(new LongField("modified", files.lastModified(),
-						Field.Store.NO));
+				document.add((IndexableField) new LongFieldSource("modified"));
 				document.add(new TextField("contents", new FileReader(file)));
 				document.add(new StringField("path", file.toString(),
 						Field.Store.YES));

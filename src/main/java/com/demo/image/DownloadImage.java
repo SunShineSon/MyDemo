@@ -13,7 +13,7 @@ public class DownloadImage {
      * @throws Exception  
      */  
     public static void main(String[] args) throws Exception {  
-         //download("http://ww2.sinaimg.cn/large/a15b4afegy1fho63w48iej20j60srac8", "gu5o.jpg","F:\\work\\git\\file");  
+    	download("http://ww2.sinaimg.cn/large/a15b4afegy1fho63w48iej20j60srac8", "gu5o55.jpg","F:\\work\\git\\file");  
     	System.out.println("ok");
     }  
       
