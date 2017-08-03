@@ -13,8 +13,8 @@ public class DownloadImage {
      * @throws Exception  
      */  
     public static void main(String[] args) throws Exception {  
-        // TODO Auto-generated method stub  
-         download("http://ww2.sinaimg.cn/large/a15b4afegy1fho63w48iej20j60srac8", "guo.jpg","F:\\work\\git\\file");  
+         //download("http://ww2.sinaimg.cn/large/a15b4afegy1fho63w48iej20j60srac8", "gu5o.jpg","F:\\work\\git\\file");  
+    	System.out.println("ok");
     }  
       
     public static void download(String urlString, String filename,String savePath) throws Exception {  
