@@ -31,8 +31,7 @@ public class Demo implements Runnable {
 	public synchronized void sellTicket() {
 		for (int n = 0; n < 20; n++) {
 			if (ticket > 0) {
-				System.out.println(Thread.currentThread().getName() + ",正在卖票:"
-						+ this.ticket--);
+				System.out.println(Thread.currentThread().getName() + ",正在卖票:" + this.ticket--);
 			}
 		}
 	}

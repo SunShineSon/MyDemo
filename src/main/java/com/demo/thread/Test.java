@@ -1,6 +1,6 @@
 package com.demo.thread;
 
-public class Test {
+public class Test extends Thread{
 
 	public static void main(String[] args) {
 		Info info = new Info();
@@ -10,4 +10,9 @@ public class Test {
 		new Thread(con).start();
 	}
 
+	@Override
+	public void run() {
+		
+		super.run();
+	}
 }
