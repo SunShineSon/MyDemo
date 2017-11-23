@@ -9,7 +9,9 @@ public class SingletonA {
 	
 	private static SingletonA instance;
 	
-	private SingletonA(){}   
+	private SingletonA(){
+		
+	}   
 
 	/**
 	 * 单例模式，懒汉式
