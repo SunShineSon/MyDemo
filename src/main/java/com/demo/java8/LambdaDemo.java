@@ -29,7 +29,6 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 	public static void main(String[] args) {
 		LambdaDemo demo = new LambdaDemo();
 		demo.sortMothed();
-
 	}
 
 	// 2.1¡¢
@@ -89,6 +88,7 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 
 
 
