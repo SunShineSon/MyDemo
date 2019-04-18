@@ -17,8 +17,9 @@ public class JavaCode implements ICode {
 	 * (non-Javadoc)
 	 * @see com.demo.proxy.inter.ICode#coding(java.lang.String)
 	 */
-	public void coding(String dealName) {
+	public String coding(String dealName) {
 		System.out.println("Java 开发人员 " + name + ",开发方法：" + dealName);
+		return "Java 开发人员 " + name + ",开发方法：" + dealName;
 	}
 
 }
