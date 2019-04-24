@@ -19,9 +19,9 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 	}
 	@Override
 	public int compareTo(LambdaDemo o) {
-		int i = this.getAge() - o.getAge();// ÏÈ°´ÕÕÄêÁäÅÅĞò
+		int i = this.getAge() - o.getAge();// ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (i == 0) {
-			return this.name.compareTo(o.getName());// Èç¹ûÄêÁäÏàµÈÁËÔÙÓÃ·ÖÊı½øĞĞÅÅĞò
+			return this.name.compareTo(o.getName());// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 		return i;
 	}
@@ -31,7 +31,7 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 		demo.sortMothed();
 	}
 
-	// 2.1¡¢
+	// 2.1ï¿½ï¿½
 	public void sortMothed3() {
 		List<LambdaDemo> list = new ArrayList<LambdaDemo>();
 		list.add(new LambdaDemo("Zoo", 13));
@@ -43,7 +43,7 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 		list.forEach(e -> System.out.println(e));
 	}
 
-	// 1¡¢´«Í³·½Ê½ÅÅĞò
+	// 1ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 	public void sortMothed() {
 		List<String> names1 = new ArrayList<String>();
 		names1.add("Google ");
@@ -61,7 +61,7 @@ public class LambdaDemo implements Comparable<LambdaDemo> {
 		names1.forEach(e -> System.out.println(e));
 	}
 
-	// 2¡¢java8ĞÂÌØĞÔ¼¯ºÏÅÅĞò
+	// 2ï¿½ï¿½java8ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void sortMothed2() {
 		List<String> name = new ArrayList<String>();
 		name.add("Google ");

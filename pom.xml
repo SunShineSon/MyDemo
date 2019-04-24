@@ -12,6 +12,9 @@
 		<spring.framework.version>3.2.6.RELEASE</spring.framework.version>
 		<cxf.version>2.7.3</cxf.version>
 		<jodd.version>3.6.5</jodd.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
 	</properties>
 	<dependencies>
 		<dependency>
