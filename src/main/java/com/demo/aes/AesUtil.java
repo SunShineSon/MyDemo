@@ -5,9 +5,12 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+
 import java.security.Key;
 import java.security.SecureRandom;
+
 
 /**
  * @Author : Ada
@@ -16,7 +19,10 @@ import java.security.SecureRandom;
  **/
 public class AesUtil {
 
-    private final String MiddleKey = "123456";      //生成key需要的密码
+    private final String MiddleKey = "AFA0511C134699AC9D6AC98BBF9562255D2EB8CC0A6735B0FC1E2BADA59583F4";      //生成key需要的密码
+
+    private static String ivParameter = "6993324250ADCA96514EE78B1EC5F499"; // 密钥默认偏移，可更改
+    private static byte[] iv = ivParameter.getBytes();
 
     public String encrypt(String password) {
         try {
@@ -54,14 +60,13 @@ public class AesUtil {
     public Key getKey() {
         if (key == null) {
             try {
-                // 生成KEY ,AES 要求密钥长度为 128
-                KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+                // 生成KEY,AES要求密钥长度为 128
+                KeyGenerator generator = KeyGenerator.getInstance("AES");
 
-                SecureRandom secureRandom = new SecureRandom();
-                secureRandom.setSeed(MiddleKey.getBytes());
-
-                keyGenerator.init(128, secureRandom);
-                SecretKey secretKey = keyGenerator.generateKey();
+                SecureRandom random = new SecureRandom();
+                random.setSeed(MiddleKey.getBytes());
+                generator.init(128, random);
+                SecretKey secretKey = generator.generateKey();
                 byte[] byteKey = secretKey.getEncoded();
 
                 // 转换KEY
@@ -76,7 +81,13 @@ public class AesUtil {
         }
     }
 
+
     public static void main(String[] args) {
+        AesUtil util = new AesUtil();
+        String encryptedPassword = util.encrypt("Ada.guoguanlan");
+        System.out.println(encryptedPassword);  //QmwiWJd+3YC6FT+dvBOadA==
+        String password = util.decrypt(encryptedPassword);
+        System.out.println(password);
 
     }
 
