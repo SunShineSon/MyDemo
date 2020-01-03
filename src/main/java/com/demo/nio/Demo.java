@@ -10,7 +10,8 @@ public class Demo {
 	public static void main(String[] args) {
 
 		try {
-			FileInputStream fis = new FileInputStream(new File("F:\\work\\fil\\qq.txt"));
+			System.out.print("ok");
+			FileInputStream fis = new FileInputStream(new File("F:\\work\\file\\qq.txt"));
 			FileChannel channel = fis.getChannel();
 			ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 			channel.read(byteBuffer);

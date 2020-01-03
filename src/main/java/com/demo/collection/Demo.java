@@ -36,6 +36,12 @@ public class Demo {
 		System.out.println(lists.size());
 	}
 	
+	/**
+	 * 剪切数组
+	 * author : guo
+	 * 2018年5月31日 下午11:05:39
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		List<User> uList = new ArrayList<User>();
 		
