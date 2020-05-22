@@ -20,12 +20,14 @@ public class CallableDemo {
 		for (Future<String> fs : results) {
 			try {
 				System.out.println(fs.get());
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} catch (ExecutionException e) {
 				e.printStackTrace();
 			}
 		}
+        System.out.println("end");
 
 	}
 }

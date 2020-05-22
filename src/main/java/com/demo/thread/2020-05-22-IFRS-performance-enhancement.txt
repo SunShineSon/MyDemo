@@ -1,0 +1,130 @@
+
+(1),
+public void excute(){
+
+ ......
+ ......
+
+ //Batch handle data.
+ boolean flag = true;
+ while(flag){
+ 
+  ArrayList list = IFRSDao.getData(); //1,design size is 50000
+
+  if(list != null && list.size() != 0){
+   int resultNum = mutilThreadHandleData(list); //2, call mutil Thread function.
+  }
+
+  if(list == null || list.size() < 50000){	//3,controll keep getting data or break up
+   flag = false;
+   
+   //4,double check break up
+   Integer count = IFRSDao.countUnhandleData();
+   if(count > 0){
+    flag = true; //5,keep on handle leave data.
+   }
+   
+  }
+ 
+ }
+ //4,get all after handle will Data
+ ArrayList afterHandleDateList = IFRSDao.getAfterDate();
+ //5,generate SVC file
+ generateSVC(afterHandleDateList);
+ 
+ ......
+ ......
+}
+
+
+(2),mutilThread function
+//need to import mutilThread jar
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+public int mutilThreadHandleData(ArrayList<IFRS> list){
+
+ Integer resultNum = 0;
+ 
+ //1,calculate how many threads we need to create. 5000 one thread. create new thread to run data,
+ int size = list.size();
+ int number = size()/5000;
+ if(number > 0){
+  int beginIndex = 0;
+  int endIndex = 5000;
+  for(int i=0; i <= number; i++){
+   //2,create a thread then run.
+   ArrayList<IFRS> cutList = list.subList(beginIndex, endIndex);
+   FutureTask<Integer> futureTask = new FutureTask<Integer>(new MyCallable(cutList));
+   new Thread(futureTask).start();
+   resultNum += futureTask.get();
+   
+   //3,prepare another list data.
+   beginIndex = endIndex;
+   if(i == number){
+    endIndex = size;
+   }else{
+    endIndex = (i + 1) * 5000;
+   }
+   
+  }
+  
+ }else{
+  FutureTask<Integer> futureTask = new FutureTask<Integer>(new MyCallable(list));
+  new Thread(futureTask).start();
+  try{
+   resultNum += futureTask.get();
+  }catch(Exception e){}
+  
+ }
+ return resultNum;
+ 
+}
+
+
+(3),Handle data class, need to implements Callable<Integer>
+
+class MyCallable implements Callable<Integer>{
+ 
+ ArrayList<IFRS> list = null;
+ 
+ public MyCallable(ArrayList<IFRS> list){
+  this.list = list;
+ }
+ 
+ 
+ @Override
+ public Integer call() throws Exception {
+  int sum = 0;
+  ArrayList saveList = new ArrayList<IFRS>();
+  for(IFRS item : list) {
+
+   process
+
+   
+   saveList.add(item); // 1,add into a list 
+   sum += i;
+  }
+  IFRSDao.saveList(); //2,save data to database;
+  return sum;
+ }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
