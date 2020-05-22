@@ -6,9 +6,35 @@ import java.util.List;
 public class ArrayListDemo {
 	
 	public static void main(String[] args) {
-		System.out.println("ok");
-		//ArrayListDemo demo  = new ArrayListDemo();
+		ArrayListDemo demo  = new ArrayListDemo();
 		//demo.arrayListV();
+
+		//3, sublist
+		List<String> list = demo.createList();
+		List<String> subList = list.subList(4, list.size()); //include begin but no end.
+		demo.alert(subList);
+
+
+	}
+
+	private List<String> createList(){
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		list.add("d");
+		list.add("e");
+		list.add("f");
+		list.add("g");
+		return list;
+	}
+
+	private void alert(List<String> list){
+		System.out.println("List :");
+		for (String str : list) {
+			System.out.println(str);
+		}
+
 	}
 
 	private void arrayList(){
@@ -27,6 +53,8 @@ public class ArrayListDemo {
 		for(Object list : lists){
 			System.out.println(list.toString());
 		}
+
+		lists.subList(0, 100);
 	}
 	private void arrayListV(){
 		List<Object> lists = new ArrayList<Object>();
