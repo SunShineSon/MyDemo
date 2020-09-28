@@ -10,9 +10,13 @@ public class ArrayListDemo {
 		//demo.arrayListV();
 
 		//3, sublist
+		//List<String> list = demo.createList();
+		//List<String> subList = list.subList(4, list.size()); //include begin but no end.
+		//demo.alert(subList);
+
+		//4
 		List<String> list = demo.createList();
-		List<String> subList = list.subList(4, list.size()); //include begin but no end.
-		demo.alert(subList);
+		System.out.println(list.get(list.size() - 1));
 
 
 	}

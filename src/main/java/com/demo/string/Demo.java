@@ -6,9 +6,12 @@ public class Demo {
 	private static void strTest() {
 		// String str = "com.foss.user.plugin.mycodeois2.MyPlugin";
 		// System.out.println(str.substring(str.lastIndexOf(".") + 1 ));
-		String strK = "plugin_code.zip";
-		String unZipFileName = strK.substring(0, strK.indexOf("."));
-		System.out.println(unZipFileName);
+		//String strK = "plugin_code.zip";
+		String strK = "codes";
+		String sub = strK.substring(0, strK.length() - 4);
+		System.out.println(sub);
+		//String unZipFileName = strK.substring(0, strK.indexOf("."));
+		//System.out.println(unZipFileName);
 	}
 
 	
@@ -79,7 +82,7 @@ public class Demo {
 	
 	public static void main(String[] args) {
 		Demo demo  = new Demo();
-		demo.mothedEquals();
+		demo.strTest();
 	}
 	
 	
