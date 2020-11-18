@@ -2,6 +2,7 @@ package com.demo.collection;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class ArrayListDemo {
 	
@@ -15,10 +16,28 @@ public class ArrayListDemo {
 		//demo.alert(subList);
 
 		//4
-		List<String> list = demo.createList();
-		System.out.println(list.get(list.size() - 1));
+		//List<String> list = demo.createList();
+		//System.out.println(list.get(list.size() - 1));
+
+		/*List<String> a = new ArrayList<String>();
+		Vector<String> b = new ArrayList<String>();
+		ArrayList<String> c = new ArrayList<String>();
+		Vector<String> d = new List<String>();
+		List<String> e = new Vector<String>();
+		List<String> f = new List<String>();*/
+
+		try{
+			System.out.println(doStuff(args));
+		}catch (Exception e){
+			System.out.println("exc");
+		}
+		doStuff(args);
 
 
+	}
+
+	static int doStuff(String[] args){
+		return Integer.parseInt(args[0]);
 	}
 
 	private List<String> createList(){

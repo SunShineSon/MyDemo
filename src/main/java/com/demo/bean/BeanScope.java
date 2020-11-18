@@ -1,5 +1,7 @@
 package com.demo.bean;
 
+import lombok.Data;
+
 /**
  * @Author : Guanlan
  * @Time : 2019/5/6 15:46
@@ -10,7 +12,12 @@ package com.demo.bean;
  * session模式web应用中session范围。
  *
  **/
+@Data
 public class BeanScope {
+
+    private String name;
+
+    private String sex;
 
     private void init(){
         System.out.println("init");
