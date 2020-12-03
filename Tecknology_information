@@ -29,7 +29,9 @@ https://blog.csdn.net/erlian1992/article/details/51298276
 7,DB2 delete column need to run this command.
 Alter table CCCECD DROP COLUMN DEATHCAUSE;
 select * from CCCECD;
-call sysproc.admin_cmd('reorg table CCCECD')
+call sysproc.admin_cmd('reorg table CCCECD');
+CALL SYSPROC.ADMIN_CMD('reorg table ifrs_claim_limit');
+REORG TABLE ifrs_claim_limit;
 
 8,
 https://app.diagrams.net/
