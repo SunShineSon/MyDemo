@@ -16,7 +16,7 @@ public class PasswordUtils {
 		return new StringBuilder(password).reverse().toString();
 	}
 	
-	@UserCase(id = 49, description = "new Password can not bu equel the old.")
+	@UserCase(id = 49, description = "new Password can not bu equals the old.")
 	public boolean checkNewPassword(List<String> list, String password){
 		return !list.contains(password);
 	}

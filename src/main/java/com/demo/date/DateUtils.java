@@ -1,6 +1,10 @@
 package com.demo.date;
 
 import com.demo.extend.duotai.D;
+import org.joda.time.DateTime;
+import org.joda.time.Months;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,7 +19,7 @@ public class DateUtils {
 
     private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
 
-    public static void main(String[] args) throws Exception {
+    public static void main1(String[] args) throws Exception {
         DateUtils dateUtils = new DateUtils();
         dateUtils.method2();
 
@@ -62,4 +66,12 @@ public class DateUtils {
 
         }
     }
+    public static void main(String[] args) {
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+        DateTime start = formatter.parseDateTime("2017-07-11");
+        DateTime end = formatter.parseDateTime("2017-11-19");
+        int months = Months.monthsBetween(start, end).getMonths();
+        System.out.println(months);
+    }
+
 }

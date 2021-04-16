@@ -19,7 +19,18 @@ public class BeanScope {
 
     private String sex;
 
+    private long id;
+
     private void init(){
         System.out.println("init");
+    }
+
+    @Data
+    public static class InnerBean{
+
+        private String innerName;
+
+        private String innerSex;
+
     }
 }
