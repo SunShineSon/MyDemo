@@ -1,6 +1,6 @@
 
 (1),
-public void excute(){
+public void execute(){
 
  ......
  ......

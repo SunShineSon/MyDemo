@@ -1,6 +1,8 @@
 package com.demo.collection;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -49,6 +51,8 @@ public class ArrayListDemo {
 		list.add("e");
 		list.add("f");
 		list.add("g");
+
+        Collections.sort(list);
 		return list;
 	}
 
@@ -97,4 +101,18 @@ public class ArrayListDemo {
 			System.out.println(list.toString());
 		}
 	}
+
+
+	public void arrayMethod(){
+	    //1.create function one
+	    int[]  i = new int[4];
+
+	    //2.create function two
+        String[] str = new String[]{"a", "b"};
+
+        //3.create function three
+        String[] str2 = {"a", "b"};
+
+
+    }
 }
