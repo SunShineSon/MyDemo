@@ -1,26 +1,46 @@
 package com.demo.collection;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class MapDemo {
 
 	public static void main(String[] args) {
 		MapDemo demo = new MapDemo();
-		demo.linkedHashMap();
+		demo.constructionHashTable();
 
 	}
 
+	private void constructionSynchronizedMap(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", "A");
+        Map<String, Object> synchronizedMap = Collections.synchronizedMap(map);
+
+
+    }
+
+	private void constructionHashMap(){
+        Map<String, Object> map = new HashMap<>();
+        HashMap<Integer,String> map2 = new HashMap<Integer,String>(2,0.75f);
+
+
+        MapDemo[] array = new MapDemo[1];
+
+
+    }
+
+    private void constructionHashTable(){
+        Hashtable<String, String> hashtable = new Hashtable<>();
+        hashtable.put("key", null);
+        System.out.println(hashtable.get("key"));
+    }
+
 	private void mapDemo(){
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("a", "A");
 		map.put("b", "B");
 		map.put("c", "C");
+		map.size();
 		
 		Set<Entry<String, Object>> maps = map.entrySet();
 		for(Entry<String, Object> entry : maps ){

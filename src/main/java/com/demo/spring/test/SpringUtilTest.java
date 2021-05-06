@@ -17,7 +17,7 @@ public class SpringUtilTest {
     	
     	//通过spring注入方式初始化对象
     	SpringUtilTest adminAppImpl = SpringUtil.getBean("springUtilTest", SpringUtilTest.class);
-    	BeanFactory beanFactory = new BeanFactory() {
+    	/*BeanFactory beanFactory = new BeanFactory() {
 			
 			public boolean isTypeMatch(String name, Class<?> targetType)
 					throws NoSuchBeanDefinitionException {
@@ -72,7 +72,7 @@ public class SpringUtilTest {
 				// TODO Auto-generated method stub
 				return false;
 			}
-		};
+		};*/
 
 	}
 

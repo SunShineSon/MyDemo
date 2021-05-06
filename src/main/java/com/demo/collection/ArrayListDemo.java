@@ -1,21 +1,18 @@
 package com.demo.collection;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 public class ArrayListDemo {
 	
 	public static void main(String[] args) {
 		ArrayListDemo demo  = new ArrayListDemo();
-		//demo.arrayListV();
+		demo.linkedList();
 
 		//3, sublist
-		//List<String> list = demo.createList();
-		//List<String> subList = list.subList(4, list.size()); //include begin but no end.
-		//demo.alert(subList);
+		List<String> list = demo.createList();
+		demo.alert(list);
+		List<String> subList = list.subList(4, list.size()); //include begin but no end.
 
 		//4
 		//List<String> list = demo.createList();
@@ -94,13 +91,24 @@ public class ArrayListDemo {
 		lists.add(b);
 		lists.add(c);
 		lists.add(b);
-		
+        lists.add(null);
+        lists.add(null);
+
 		lists.add(1, a);
 		
 		for(Object list : lists){
 			System.out.println(list.toString());
 		}
 	}
+
+	void linkedList(){
+        LinkedList<Object> linkedList = new LinkedList<>();
+
+        linkedList.add(null);
+        linkedList.add(null);
+
+        linkedList.forEach(System.out::println);
+    }
 
 
 	public void arrayMethod(){
