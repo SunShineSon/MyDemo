@@ -13,12 +13,13 @@ public class CallableDemo {
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		ArrayList<Future<String>> results = new ArrayList<>();
 
-		//1.Executor has result thead method
+		//1.Executor has result thread method
 		for (int i = 0; i < 3; i++) {
 			Future<String> future = executorService.submit(new TaskWithResult(i));
 			results.add(future);
 		}
 		for (Future<String> fs : results) {
+			fs.isDone();
 			try {
                 System.out.println(fs.isDone());
 				System.out.println(fs.get());
@@ -31,7 +32,7 @@ public class CallableDemo {
 		}
         executorService.shutdown();
 
-        //2.Have't result thead method
+        //2.Have't result thread method
         executorService.execute(new Runnable() {
             @Override
             public void run() {

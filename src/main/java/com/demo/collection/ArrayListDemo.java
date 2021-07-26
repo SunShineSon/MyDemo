@@ -6,6 +6,10 @@ import java.util.*;
 public class ArrayListDemo {
 	
 	public static void main(String[] args) {
+
+		String str = "";
+		System.out.println("String".equals(str));
+
 		ArrayListDemo demo  = new ArrayListDemo();
 		demo.linkedList();
 

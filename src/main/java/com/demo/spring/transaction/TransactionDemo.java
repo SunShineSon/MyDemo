@@ -1,5 +1,7 @@
 package com.demo.spring.transaction;
 
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * @Author : Ada
  * @CreateTime : 4/19/2021 3:21 PM
@@ -12,4 +14,10 @@ public class TransactionDemo {
 
     }
 
+
+
+    @Transactional(readOnly=true)
+    public void method(){
+
+    }
 }

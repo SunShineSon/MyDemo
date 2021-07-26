@@ -2,21 +2,32 @@ package com.demo.collection;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class MapDemo {
 
+	public static final Map<String, Object> mapFinal = new HashMap<>();
+
 	public static void main(String[] args) {
 		MapDemo demo = new MapDemo();
-		demo.constructionHashTable();
+		demo.hashMethod();
 
 	}
+
+	private void hashMethod(){
+		int i = 2;
+		System.out.println(i >>> 16);
+
+	}
+
+
 
 	private void constructionSynchronizedMap(){
         Map<String, Object> map = new HashMap<>();
         map.put("a", "A");
+        map.put(null, null);
+        map.get("a");
         Map<String, Object> synchronizedMap = Collections.synchronizedMap(map);
-
-
     }
 
 	private void constructionHashMap(){
@@ -30,9 +41,9 @@ public class MapDemo {
     }
 
     private void constructionHashTable(){
-        Hashtable<String, String> hashtable = new Hashtable<>();
-        hashtable.put("key", null);
-        System.out.println(hashtable.get("key"));
+        Hashtable<String, String> hashTable = new Hashtable<>();
+		hashTable.put("key", null);
+        System.out.println(hashTable.get("key"));
     }
 
 	private void mapDemo(){
@@ -113,6 +124,22 @@ public class MapDemo {
         }
 		
 		
+	}
+
+	private void treeMap(){
+		Map<String, String> treeMap = new TreeMap<>();
+
+
+	}
+
+	private void concurrentHashMapMethod(){
+		ConcurrentHashMap hashMap = new ConcurrentHashMap();
+		hashMap.put("key", "value");
+		hashMap.put(new MapDemo(), "b");
+		Set<String> set = hashMap.keySet();
+		for (String str : set) {
+			System.out.println(hashMap.get(str));
+		}
 	}
 	    
 	    
